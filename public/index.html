@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <script type="text/javascript" src="javascripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="javascripts/brewery_service.js"></script>
+    <script type="text/javascript" src="javascripts/bootstrap.js"></script>
+    <link rel="stylesheet" href="stylesheets/bootstrap.css">
+    <script type="text/javascript">
+      $(document).ready(function(){
+         (function update() {
+            BrewerySevice.retrieveBeerContainers();
+            setTimeout(update, 5000);
+         })();
+      });
+    </script>
+    <title>PragmaBrewery</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>PragmaBrewery</h1>
+      <h3>Beer container temperature monitoring</h3>
+      <div class="alert alert-danger" role="alert" style="visibility: hidden"></div>
+      <div class="row" id="beer-containers"></div>
+    </div>
+  </body>
+</html>
