@@ -4,21 +4,20 @@ RSpec.describe Truck do
   subject { described_class.new }
 
   it 'holds beer containers' do
-    expect(subject.containers).to all (be_a(BeerContainer))
+    expect(subject.containers).to all be_a(BeerContainer)
   end
 
   describe '#to_json' do
-    class BeerContainerKindStub
-      def to_json(*options)
-        as_json.to_json
-      end
+    let(:beer_class) { class_double('BeerContainer') }
+    let(:beer_container) { instance_double('BeerContainer') }
 
-      private def as_json
-        {foo: 'bar'}
-      end
+    before do
+      stub_const('BeerContainer::KINDS', [beer_class])
+      allow(beer_class).to receive(:new).and_return(beer_container)
+      allow(beer_container).to receive(:to_json).and_return(
+        {foo: 'bar'}.to_json
+      )
     end
-
-    before { stub_const('BeerContainer::KINDS', [BeerContainerKindStub]) }
 
     let(:truck_json) do
       {
