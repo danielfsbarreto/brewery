@@ -23,5 +23,5 @@ class BreweryApp < Sinatra::Base
     truck.to_json
   end
 
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end

@@ -1,4 +1,4 @@
-require File.expand_path '../../spec_helper.rb', __FILE__
+require File.expand_path '../spec_helper.rb', __dir__
 
 RSpec.shared_examples 'BeerContainer' do |attributes|
   subject { described_class.new }
@@ -10,12 +10,10 @@ RSpec.shared_examples 'BeerContainer' do |attributes|
   describe '#to_json' do
     it 'returns json representation' do
       expect(JSON.parse(subject.to_json, symbolize_names: true)).to include(
-        {
-          kind: attributes[:kind],
-          min_temp: attributes[:min_temp],
-          max_temp: attributes[:max_temp],
-          current_temp: 0
-        }
+        kind: attributes[:kind],
+        min_temp: attributes[:min_temp],
+        max_temp: attributes[:max_temp],
+        current_temp: 0
       )
     end
 

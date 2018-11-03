@@ -7,7 +7,7 @@ class BeerContainer
     @current_temperature = 0
   end
 
-  def to_json(*options)
+  def to_json(*_options)
     as_json.to_json
   end
 

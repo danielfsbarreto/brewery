@@ -1,4 +1,4 @@
-require File.expand_path '../../spec_helper.rb', __FILE__
+require File.expand_path '../spec_helper.rb', __dir__
 
 RSpec.describe Truck do
   subject { described_class.new }
@@ -15,14 +15,14 @@ RSpec.describe Truck do
       stub_const('BeerContainer::KINDS', [beer_class])
       allow(beer_class).to receive(:new).and_return(beer_container)
       allow(beer_container).to receive(:to_json).and_return(
-        {foo: 'bar'}.to_json
+        { foo: 'bar' }.to_json
       )
     end
 
     let(:truck_json) do
       {
         containers: [
-          {foo: 'bar'}
+          { foo: 'bar' }
         ]
       }.to_json
     end

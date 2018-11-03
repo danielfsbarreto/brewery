@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+  - 2.5.1
+jobs:
+  include:
+    - stage: "Inspections"
+      name: "Rubocop"
+      script: bundle exec rubocop
+    - stage: "Tests"
+      name: "Back-end specs"
+      script: bundle exec rspec
