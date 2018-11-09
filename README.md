@@ -30,6 +30,16 @@ PORT=XXXX ruby brewery_app.rb
 
 `PORT` is not a mandatory parameter. By default, it starts the server at `4567`. Access it through `http://localhost:XXXX`.
 
+## Ensuring code-wise best practices
+
+[RuboCop](https://github.com/rubocop-hq/rubocop) is a Ruby static code analyzer and code formatter that is used in this project to guarantee everything is consistent across the codebase. Check [this file](.rubocop.yml) to know which rules are being overriden.
+
+To perform all checks, execute:
+
+```
+bundle exec rubocop
+```
+
 ## Running the tests
 
 All server-side specs are written with [RSpec](http://rspec.info/). Therefore, a one-liner will do it:
