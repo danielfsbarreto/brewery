@@ -7,8 +7,5 @@ jobs:
       name: "Rubocop"
       script: bundle exec rubocop
     - stage: "Tests"
-      name: "Back-end specs - Controllers"
-      script: bundle exec rspec spec/brewery_app_spec.rb
-    - stage: "Tests"
-      name: "Back-end specs - Models"
-      script: bundle exec rspec spec/models
+      name: "Back-end specs"
+      script: bundle exec rspec
