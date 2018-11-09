@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/danielfsbarreto/brewery.svg?branch=master)](https://travis-ci.org/danielfsbarreto/brewery)
 
-# PragmaBrewery Temperature Monitoring
+# Shane's Brewery Temperature Monitoring
 
 A system that detects whenever beer cargo is either running too hot or too cold.
 
