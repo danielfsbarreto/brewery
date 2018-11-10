@@ -4,7 +4,7 @@ class BeerContainer
   attr_accessor :current_temperature
 
   def initialize
-    @current_temperature = 0
+    @current_temperature = 1
   end
 
   def to_json(*_options)
